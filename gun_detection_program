@@ -5,7 +5,7 @@ import imutils
 import datetime
 
 gun_cascade = cv2.CascadeClassifier('cascade.xml')
-camera = cv2.VideoCapture('gun_sample3.mp4')
+cameras = cv2.VideoCapture('gun_sample3.mp4')
 
 # initialize the first frame in the video stream
 firstFrame = None
@@ -15,7 +15,7 @@ firstFrame = None
 gun_exist = False
 
 while True:
-    (grabbed, frame) = camera.read()
+    (grabbed, frame) = cameras.read()
 
     # if the frame could not be grabbed, then we have reached the end of the video
     if not grabbed:
@@ -54,5 +54,5 @@ else:
     print("guns are NOT detected in the video")
 
 # cleanup the camera and close any open windows
-camera.release()
+cameras.release()
 cv2.destroyAllWindows()
