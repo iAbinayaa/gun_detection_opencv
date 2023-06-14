@@ -49,9 +49,9 @@ while True:
     key = cv2.waitKey(1) & 0xFF
 
 if gun_exist:
-    print("guns detected")
+    print("guns detected in the video")
 else:
-    print("guns NOT detected")
+    print("guns are NOT detected in the video")
 
 # cleanup the camera and close any open windows
 camera.release()
